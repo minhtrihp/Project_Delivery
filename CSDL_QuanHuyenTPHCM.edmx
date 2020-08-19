@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CSDLQuanHuyenPhuongXaTPHCMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PhuongXa">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenQuanHuyen" Type="nvarchar" MaxLength="30" />
+          <Property Name="TenPhuongXa" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="QuanHuyen">
+          <Key>
+            <PropertyRef Name="MaQuanHuyen" />
+          </Key>
+          <Property Name="MaQuanHuyen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenQuanHuyen" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Function Name="TimPhuongXaTheoQuanHuyen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Quan" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CSDLQuanHuyenPhuongXaTPHCMModelStoreContainer">
+          <EntitySet Name="PhuongXa" EntityType="Self.PhuongXa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuanHuyen" EntityType="Self.QuanHuyen" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CSDLQuanHuyenPhuongXaTPHCMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PhuongXa">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenQuanHuyen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TenPhuongXa" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuanHuyen">
+          <Key>
+            <PropertyRef Name="MaQuanHuyen" />
+          </Key>
+          <Property Name="MaQuanHuyen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenQuanHuyen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="CSDLQuanHuyenPhuongXaTPHCMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PhuongXas" EntityType="Self.PhuongXa" />
+          <EntitySet Name="QuanHuyens" EntityType="Self.QuanHuyen" />
+          <FunctionImport Name="TimPhuongXaTheoQuanHuyen" ReturnType="Collection(CSDLQuanHuyenPhuongXaTPHCMModel.TimPhuongXaTheoQuanHuyen_Result)">
+            <Parameter Name="Quan" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="TimPhuongXaTheoQuanHuyen_Result">
+          <Property Type="Int32" Name="STT" Nullable="false" />
+          <Property Type="String" Name="TenQuanHuyen" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="TenPhuongXa" Nullable="true" MaxLength="30" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CSDLQuanHuyenPhuongXaTPHCMModelStoreContainer" CdmEntityContainer="CSDLQuanHuyenPhuongXaTPHCMEntities">
+          <EntitySetMapping Name="PhuongXas">
+            <EntityTypeMapping TypeName="CSDLQuanHuyenPhuongXaTPHCMModel.PhuongXa">
+              <MappingFragment StoreEntitySet="PhuongXa">
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="TenQuanHuyen" ColumnName="TenQuanHuyen" />
+                <ScalarProperty Name="TenPhuongXa" ColumnName="TenPhuongXa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuanHuyens">
+            <EntityTypeMapping TypeName="CSDLQuanHuyenPhuongXaTPHCMModel.QuanHuyen">
+              <MappingFragment StoreEntitySet="QuanHuyen">
+                <ScalarProperty Name="MaQuanHuyen" ColumnName="MaQuanHuyen" />
+                <ScalarProperty Name="TenQuanHuyen" ColumnName="TenQuanHuyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TimPhuongXaTheoQuanHuyen" FunctionName="CSDLQuanHuyenPhuongXaTPHCMModel.Store.TimPhuongXaTheoQuanHuyen">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CSDLQuanHuyenPhuongXaTPHCMModel.TimPhuongXaTheoQuanHuyen_Result">
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="TenQuanHuyen" ColumnName="TenQuanHuyen" />
+                <ScalarProperty Name="TenPhuongXa" ColumnName="TenPhuongXa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

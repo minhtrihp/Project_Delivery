@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10166609-7D92-4E6F-937A-42CA6EF1B756}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppGiaoHang</RootNamespace>
+    <AssemblyName>AppGiaoHang</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CapBacTaiKhoanNV.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietDonHang.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_QLGiaoHang.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_QLGiaoHang.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_QLGiaoHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_QLGiaoHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_QLGiaoHang.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_QuanHuyenTPHCM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_QuanHuyenTPHCM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_QuanHuyenTPHCM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_QuanHuyenTPHCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL_QuanHuyenTPHCM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_QuanHuyenTPHCM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DaoThuTuMaDH_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Demo_Proc_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DonHang.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSDHChuaNhanTheoQuan_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormDangKiNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangKiNV.Designer.cs">
+      <DependentUpon>FormDangKiNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKHTaoDonThanhCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKHTaoDonThanhCong.Designer.cs">
+      <DependentUpon>FormKHTaoDonThanhCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhanVien.Designer.cs">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormXemChiTietDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemChiTietDonHang.Designer.cs">
+      <DependentUpon>FormXemChiTietDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayCacDHTheoMaShipper_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayCacDonHang_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayChiTietDHTheoMaDH_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayDonHangTheoMaDH_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhuongXa.cs">
+      <DependentUpon>CSDL_QuanHuyenTPHCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLDonHang.cs" />
+    <Compile Include="FormCaiDat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaiDat.Designer.cs">
+      <DependentUpon>FormCaiDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDangKiShippers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangKiShippers.Designer.cs">
+      <DependentUpon>FormDangKiShippers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangNhap.Designer.cs">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDonHang.Designer.cs">
+      <DependentUpon>FormDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoaiDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoaiDangNhap.Designer.cs">
+      <DependentUpon>FormLoaiDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhanHang.Designer.cs">
+      <DependentUpon>FormNhanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViDienTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViDienTu.Designer.cs">
+      <DependentUpon>FormViDienTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDienDatHangKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienDatHangKH.Designer.cs">
+      <DependentUpon>GiaoDienDatHangKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLGiaoHangDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLGiaoHangDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLTaiKhoan.cs" />
+    <Compile Include="QLThongTinCaNhan.cs" />
+    <Compile Include="QuanHuyen.cs">
+      <DependentUpon>CSDL_QuanHuyenTPHCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shipper.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoanKH.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoanNV.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoanShipper.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs" />
+    <Compile Include="TimCTDHTuMaDH_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimKHTheoMa_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimPhuongXaTheoQuanHuyen_Result.cs">
+      <DependentUpon>CSDL_QuanHuyenTPHCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimShippersTheoMa_Result.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XacNhanDonHang.cs">
+      <DependentUpon>CSDL_QLGiaoHang.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormCaiDat.resx">
+      <DependentUpon>FormCaiDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDangKiNV.resx">
+      <DependentUpon>FormDangKiNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDangKiShippers.resx">
+      <DependentUpon>FormDangKiShippers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDangNhap.resx">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDonHang.resx">
+      <DependentUpon>FormDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKHTaoDonThanhCong.resx">
+      <DependentUpon>FormKHTaoDonThanhCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoaiDangNhap.resx">
+      <DependentUpon>FormLoaiDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhanHang.resx">
+      <DependentUpon>FormNhanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhanVien.resx">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViDienTu.resx">
+      <DependentUpon>FormViDienTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemChiTietDonHang.resx">
+      <DependentUpon>FormXemChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienDatHangKH.resx">
+      <DependentUpon>GiaoDienDatHangKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="CSDL_QuanHuyenTPHCM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CSDL_QuanHuyenTPHCM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="CSDL_QLGiaoHang.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CSDL_QLGiaoHang.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CSDL_QLGiaoHang.edmx.diagram">
+      <DependentUpon>CSDL_QLGiaoHang.edmx</DependentUpon>
+    </None>
+    <None Include="CSDL_QuanHuyenTPHCM.edmx.diagram">
+      <DependentUpon>CSDL_QuanHuyenTPHCM.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QLGiaoHangDataSet.xsc">
+      <DependentUpon>QLGiaoHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLGiaoHangDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLGiaoHangDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLGiaoHangDataSet.xss">
+      <DependentUpon>QLGiaoHangDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSDL_QLGiaoHang.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSDL_QLGiaoHang.edmx</DependentUpon>
+      <LastGenOutput>CSDL_QLGiaoHang.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CSDL_QLGiaoHang.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSDL_QLGiaoHang.edmx</DependentUpon>
+      <LastGenOutput>CSDL_QLGiaoHang.cs</LastGenOutput>
+    </Content>
+    <Content Include="CSDL_QuanHuyenTPHCM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSDL_QuanHuyenTPHCM.edmx</DependentUpon>
+      <LastGenOutput>CSDL_QuanHuyenTPHCM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CSDL_QuanHuyenTPHCM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSDL_QuanHuyenTPHCM.edmx</DependentUpon>
+      <LastGenOutput>CSDL_QuanHuyenTPHCM.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
